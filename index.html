@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart - Offline Store Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav-wrap">
+      <a class="brand" href="#" aria-label="ShopKart home">
+        <span class="brand-name">Flipkart</span>
+        <span class="brand-sub">Explore <b>Plus</b> ✦</span>
+      </a>
+      <label class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Search for products, brands and more">
+      </label>
+      <button class="login-btn" id="loginBtn">Login</button>
+      <button class="nav-link" id="sellerBtn">Become a Seller</button>
+      <button class="nav-link more-btn" id="moreBtn">More ▾</button>
+      <button class="cart-btn" id="openCart">🛒 <span>Cart</span><b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-strip" id="categoryStrip">
+      <button class="category active" data-category="All"><span>🛍️</span>All</button>
+      <button class="category" data-category="Mobiles"><span>📱</span>Mobiles</button>
+      <button class="category" data-category="Electronics"><span>💻</span>Electronics</button>
+      <button class="category" data-category="Fashion"><span>👕</span>Fashion</button>
+      <button class="category" data-category="Home"><span>🛋️</span>Home</button>
+      <button class="category" data-category="Appliances"><span>🧊</span>Appliances</button>
+      <button class="category" data-category="Beauty"><span>💄</span>Beauty</button>
+      <button class="category" data-category="Sports"><span>⚽</span>Sports</button>
+    </section>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">BIG SAVING DAYS</p>
+        <h1>Find your next<br><span>favourite thing.</span></h1>
+        <p>Great picks. Great prices. A simple offline shopping demo.</p>
+        <button class="primary-btn" id="shopNow">Shop now <span>→</span></button>
+      </div>
+      <div class="hero-art" aria-label="Shopping illustration">
+        <div class="sun"></div><div class="hero-bag">🛍️</div>
+        <div class="float-card card-one">⚡ Top deals</div>
+        <div class="float-card card-two">✨ New arrivals</div>
+        <div class="hero-circle"></div>
+      </div>
+    </section>
+
+    <section class="deal-banner">
+      <div><span class="deal-icon">⚡</span><strong>Deals of the day</strong><small>Handpicked products at special prices</small></div>
+      <span class="deal-tag">DEMO OFFERS</span>
+    </section>
+
+    <section class="products-section" id="productsSection">
+      <div class="section-heading">
+        <div><h2 id="sectionTitle">Recommended for you</h2><p id="resultCount">Explore popular products</p></div>
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="default">Sort: Recommended</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <div>🔎</div><h3>No products found</h3><p>Try another search or category.</p>
+        <button class="primary-btn" id="resetFilters">Show all products</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">Flipkart <span>Offline Clone</span></div>
+    <p>Student mini project made with HTML, CSS and JavaScript.</p>
+    <p class="footer-note">This is a frontend demonstration only. No real orders or payments are processed.</p>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-head"><div><h2>My Cart</h2><p id="cartSubtitle">Your selected items</p></div><button class="close-btn" id="closeCart">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-bottom" id="cartBottom">
+      <div class="total-row"><span>Total amount</span><strong id="cartTotal">₹0</strong></div>
+      <button class="checkout-btn" id="checkoutBtn">Place demo order</button>
+      <small>Demo only — no payment will be taken.</small>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
